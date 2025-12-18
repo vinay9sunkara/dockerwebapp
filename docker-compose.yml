@@ -1,0 +1,17 @@
+---
+services:
+  devopsdb:
+    container_name: devopsdb
+    image: devopsdb
+    ports:
+      - "3306:3306"
+
+  myapp:
+    container_name: myapp_cont
+    image: myapp-img
+    ports:
+      - "8082:8080"
+    environment:
+      DB_HOST: devopsdb
+    depends_on:
+      - devopsdb
