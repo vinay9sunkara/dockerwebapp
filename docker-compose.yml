@@ -2,13 +2,13 @@
 services:
   devopsdb:
     container_name: devopsdb
-    image: devopsdb
+    build: ./Docker-db
     ports:
       - "3306:3306"
 
   myapp:
     container_name: myapp_cont
-    image: myapp-img
+    build: ./Docker-app
     ports:
       - "8082:8080"
     environment:
