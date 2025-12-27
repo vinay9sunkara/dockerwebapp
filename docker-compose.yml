@@ -1,0 +1,15 @@
+---
+services:
+  devopsdb:
+    image: vinay9191/docker-app3:mysqldb
+    ports:
+      - "3306:3306"
+    deploy:
+      replicas : 3
+      
+  app_img:
+    image: vinay9191/docker-app3:appimg
+    ports:
+      - "3232:8080"
+    deploy:
+      replicas : 3
