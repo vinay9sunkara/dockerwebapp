@@ -13,3 +13,6 @@ services:
       - "3232:8080"
     deploy:
       replicas : 3
+    depends_on:
+      - devopsdb
+    
